@@ -14,4 +14,4 @@ app.listen(port, () =>{
     console.log('Api iniciada')
 })
 
-app.get('/', (req, res) => res.send('Olá mundo'))
+app.get('/', (req, res) => res.send('API de gerenciamento de projetos'))

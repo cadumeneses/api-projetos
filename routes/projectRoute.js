@@ -11,7 +11,7 @@ const getProjects = () => {
     try {
         return JSON.parse(data)
     } catch (error) {
-        return ['errr']
+        return []
     }
 }
 
@@ -48,9 +48,9 @@ const projectRoute = (app) => {
         res.status(200).send('OK')
     })
     .delete((req, res) => {
-        const project = getProjects()
+        const projects = getProjects()
 
-        saveProject(project.filter(project.id !== req.params.id))
+        saveProject(projects.filter(project => project.id !== req.params.id))
 
         res.status(200).send('OK')
     })
